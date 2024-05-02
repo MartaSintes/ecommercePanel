@@ -35,9 +35,14 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css", 
+              "src/assets/plugins/custom/datatables/datatables.bundle.css", 
+              "src/assets/plugins/global/plugins.bundle.css", 
+              "src/assets/css/style.bundle.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts":[
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
