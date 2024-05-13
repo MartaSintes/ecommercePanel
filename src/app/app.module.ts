@@ -7,12 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 import { routing } from './app.routing';
 import { IndexUsuarioComponent } from './components/usuarios/index-usuario/index-usuario.component';
 import { CreateUsuarioComponent } from './components/usuarios/create-usuario/create-usuario.component';
 import { EditUsuarioComponent } from './components/usuarios/edit-usuario/edit-usuario.component';
 import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -21,11 +22,11 @@ import { LoginComponent } from './components/login/login.component';
     AppComponent,
     SidebarComponent,
     TopbarComponent,
-    DashboardComponent,
     IndexUsuarioComponent,
     CreateUsuarioComponent,
     EditUsuarioComponent,
     LoginComponent,
+    DashboardComponent
     
   ],
   imports: [
@@ -33,7 +34,7 @@ import { LoginComponent } from './components/login/login.component';
     AppRoutingModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

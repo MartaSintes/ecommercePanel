@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UsuarioService } from '../../../services/usuario.service';
+import { Router } from '@angular/router';
 declare var toastr:any;
 
 @Component({
@@ -11,9 +12,12 @@ export class CreateUsuarioComponent {
   public usuario : any = {
     rol: ''
   };
+  public token = localStorage.getItem('token');
+  public btn_load = false;
 
   constructor(
-    private _usuarioService : UsuarioService
+    private _usuarioService : UsuarioService,
+    private _router: Router
   ){}
 
   ngOnInit(){}
@@ -29,13 +33,17 @@ export class CreateUsuarioComponent {
     }else if(!this.usuario.rol){
       toastr.error("El rol es requerido.");
     }else{
-      this._usuarioService.createUsuario(this.usuario).subscribe(
+      this.btn_load = true;
+      this._usuarioService.createUsuario(this.usuario, this.token).subscribe(
         response=>{
           console.log(response);
+          this.btn_load = false;
+          this._router.navigate(['/colaborador']);
           
         },
-        error=>{
+        error=>{  
           console.log(error);
+          this.btn_load = false;
           
         }
       );
