@@ -146,7 +146,7 @@
 
                   </div>
                   <div class="card-footer">
-                    <button type="button" class="btn btn-dark" (click)="registrar()">
+                    <button *ngIf= "!btn_load" type="button" class="btn btn-dark" (click)="registrar()">
                       <span class="svg-icon svg-icon-3 ms-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -157,7 +157,7 @@
                       </span>
                       Crear usuario
                     </button>
-                    <button class="btn btn-dark" type="button" disabled>
+                    <button *ngIf= "btn_load" class="btn btn-dark" type="button" disabled>
                       <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                       Procensando...
                     </button>
