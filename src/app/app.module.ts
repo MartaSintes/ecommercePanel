@@ -26,7 +26,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CreateUsuarioComponent,
     EditUsuarioComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
     
   ],
   imports: [
@@ -35,8 +35,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     routing,
     FormsModule,
     HttpClientModule,
+    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
