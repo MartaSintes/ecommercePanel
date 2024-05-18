@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
@@ -27,7 +28,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     EditUsuarioComponent,
     LoginComponent,
     DashboardComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     routing,
     FormsModule,
     HttpClientModule,
-    
+    NgbPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
