@@ -15,6 +15,9 @@ import { CreateUsuarioComponent } from './components/usuarios/create-usuario/cre
 import { EditUsuarioComponent } from './components/usuarios/edit-usuario/edit-usuario.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
+import { CreateProductoComponent } from './components/productos/create-producto/create-producto.component';
+import { EditProductoComponent } from './components/productos/edit-producto/edit-producto.component';
 
 
 
@@ -28,6 +31,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     EditUsuarioComponent,
     LoginComponent,
     DashboardComponent,
+    IndexProductoComponent,
+    CreateProductoComponent,
+    EditProductoComponent,
   ],
   imports: [
     BrowserModule,
