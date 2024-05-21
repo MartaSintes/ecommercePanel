@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductoService } from '../../../services/producto.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GLOBAL } from '../../../services/GLOBAL';
 declare var toastr: any;
 declare var $: any;
@@ -22,10 +22,12 @@ export class EditProductoComponent {
   public id = '';
   public load_galeria = true;
   public url = GLOBAL.url;
+  public btn_delete_imagen = false;
 
   constructor(
     private _productoService: ProductoService,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _router: Router
   ) {}
 
   ngOnInit() {
@@ -94,17 +96,26 @@ export class EditProductoComponent {
     } else if (!this.imagen_titulo) {
       toastr.error('El titulo es requerido');
     } else {
-      this.galeria.push({
+      let data = {
         imagen: this.imagen,
         titulo: this.imagen_titulo,
-        str: this.imagen_str,
-      });
+        producto: this.id,
+      };
 
-      this.imagen = undefined;
-      this.imagen_titulo = '';
-      this.imagen_str = '';
-
-      $('#FileInput').val('');
+      this._productoService
+        .uploadImgProducto(data, this.token)
+        .subscribe((response) => {
+          console.log(response);
+          if (response.data != undefined) {
+            toastr.success('Imagen agregada.');
+            this.imagen = undefined;
+            this.imagen_titulo = '';
+            $('#FileInput').val('');
+            this.init_galeria();
+          } else {
+            toastr.error(response.message);
+          }
+        });
     }
   }
 
@@ -112,5 +123,44 @@ export class EditProductoComponent {
     this.galeria.splice(idx, 1);
   }
 
-  actualizar() {}
+  actualizar() {
+    if (!this.producto.titulo) {
+      toastr.error('El titulo es requerido');
+    } else if (!this.producto.descripcion) {
+      toastr.error('La descripción es requerida');
+    } else {
+      const data: any = {
+        titulo: this.producto.titulo,
+        descripcion: this.producto.descripcion,
+      };
+      console.log(data);
+      this._productoService
+        .updateProducto(this.id, data, this.token)
+        .subscribe((response) => {
+          console.log(response);
+          if (response.data != undefined) {
+            toastr.success('Actualización completada.');
+            this.init_data();
+            this._router.navigate(['/producto']);
+          } else {
+            toastr.error(response.message);
+          }
+        });
+    }
+  }
+  delete_imagen(id: any) {
+    this.btn_delete_imagen = true;
+    this._productoService
+      .deleteImgProducto(id, this.token)
+      .subscribe((response) => {
+        if (response.data != undefined) {
+          toastr.success('Eliminacion completada.');
+          this.init_galeria();
+        } else {
+          toastr.error(response.message);
+        }
+        this.btn_delete_imagen = false;
+        $('#deleteImg-' + id).modal('hide');
+      });
+  }
 }

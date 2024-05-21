@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductoService } from '../../../services/producto.service';
 import { GLOBAL } from '../../../services/GLOBAL';
 declare var $: any;
+declare var toastr: any;
 
 @Component({
   selector: 'app-index-producto',
@@ -46,6 +47,15 @@ export class IndexProductoComponent {
         $('#state-' + id).modal('hide');
         this.init_data('Todos');
         this.btn_state_load = false;
+      });
+  }
+  deleteProducto(id: any) {
+    this._productoService
+      .deleteProducto(id, this.token)
+      .subscribe((response) => {
+        console.log(response);
+        // Actualizar la lista de productos después de eliminar
+        this.init_data('Todos');
       });
   }
 }

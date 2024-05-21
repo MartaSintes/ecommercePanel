@@ -14,6 +14,7 @@ export class IndexUsuarioComponent implements OnInit {
   public page = 1;
   public pageSize = 2;
 
+
   constructor(private _usuarioService: UsuarioService) {}
 
   ngOnInit(): void {
@@ -34,17 +35,18 @@ export class IndexUsuarioComponent implements OnInit {
     }
   }
 
-  borrarUsuario(id: string) {
-    if (confirm('¿Estás seguro de que quieres borrar este usuario?')) {
-      this._usuarioService.deleteUsuario(id, this.token).subscribe(
-        (response) => {
-          toastr.success('Usuario eliminado correctamente');
-          // Actualizar la lista de usuarios o redirigir según sea necesario
-        },
-        (error) => {
-          toastr.error('Error al eliminar el usuario');
-        }
-      );
-    }
+  borrarUsuario(id: string): void {
+    
+     this._usuarioService.deleteUsuario(id, this.token).subscribe(
+       (response) => {
+         toastr.success('Usuario eliminado correctamente');
+         this.initData(); // Actualizar la lista de usuarios
+         
+       },
+       (error) => {
+         toastr.error('Error al eliminar el usuario');
+        
+       }
+     );
   }
 }

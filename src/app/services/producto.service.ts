@@ -47,7 +47,7 @@ export class ProductoService {
     });
   }
   getProducto(id: any, token: any): Observable<any> {
-    let headers = new HttpHeaders({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: token,
     });
@@ -55,14 +55,52 @@ export class ProductoService {
       headers: headers,
     });
   }
-  getGaleriaProducto(id: any, token: any): Observable<any>{
-    let headers = new HttpHeaders({
+  getGaleriaProducto(id: any, token: any): Observable<any> {
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: token,
     });
     return this._http.get(this.url + '/getGaleriaProducto/' + id, {
       headers: headers,
-  });
+    });
+  }
+  updateProducto(id: any, data: any, token: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token,
+    });
+    return this._http.put(this.url + '/updateProducto/' + id, data, {
+      headers: headers,
+    });
+  }
 
+  uploadImgProducto(data: any, token: any): Observable<any> {
+    let headers = new HttpHeaders({ Authorization: token });
+    const fd = new FormData();
+    fd.append('titulo', data.titulo);
+    fd.append('imagen', data.imagen);
+    fd.append('producto', data.producto);
+    return this._http.post(this.url + '/uploadImgProducto', fd, {
+      headers: headers,
+    });
+  }
+  deleteImgProducto(id: any, token: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token,
+    });
+    return this._http.delete(this.url + '/deleteImgProducto/' + id, {
+      headers: headers,
+    });
+  }
+
+  deleteProducto(id: any, token: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token,
+    });
+    return this._http.delete(this.url + '/deleteProducto/' + id, {
+      headers: headers,
+    });
   }
 }
