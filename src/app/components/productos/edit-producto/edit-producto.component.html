@@ -20,25 +20,10 @@
                         <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                             <!--begin::Title-->
                             <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Dashboard
-                            <!--begin::Separator-->
-                            <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
-                            <!--end::Separator-->
-                            <!--begin::Description-->
-                            <ol class="breadcrumb text-muted fs-6 fw-semibold">
-                                <li class="breadcrumb-item pe-3">Usuarios</li>
-                            </ol>
-                            <!--end::Description--></h1>
+                            </h1>
                             <!--end::Title-->
                         </div>
-                        <!--end::Page title-->
-                        <!--begin::Actions-->
-                        <div class="d-flex align-items-center py-1">
-                            
-                            <a href="#" class="btn btn-sm btn-primary">
-                                Create</a>
-                            <!--end::Button-->
-                        </div>
-                        <!--end::Actions-->
+                        
                     </div>
                     <!--end::Container-->
                 </div>
@@ -75,14 +60,8 @@
                                                         <div class="pb-10 pb-lg-15" >
                                                             <!--begin::Title-->
                                                             <h2 class="d-flex align-items-center text-dark fw-700">
-                                                                Nuevo producto
+                                                                Actualizar producto
                                                             </h2>
-                                                            <!--end::Title-->
-                                                            <!--begin::Notice-->
-                                                            <div class="text-muted fw-semibold fs-6" >
-                                                                Datos generales del nuevo producto.
-                                                            </div>
-                                                            <!--end::Notice-->
                                                         </div>
                                                         <!--end::Heading-->
                                                         
@@ -93,7 +72,6 @@
                                                                     Título
                                                                 </label>
                                                                 <input type="text" class="form-control form-control-solid mb-2" placeholder="Nombre del producto" name="titulo" [(ngModel)]="producto.titulo"/>
-                                                                <div class="text-muted fs-7">Se requiere un nombre de producto y se recomienda que sea único.</div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -103,7 +81,6 @@
                                                                 </label>
                                                                 <textarea class="form-control form-control-solid mb-2" name="descripcion" placeholder="Contenido descriptivo del producto" [(ngModel)]="producto.descripcion"></textarea>
                                                            
-                                                                <div class="text-muted fs-7">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
                                                             </div>
                                                         </div>
                                                     
@@ -122,12 +99,7 @@
                                                             <h2 class="d-flex align-items-center text-dark fw-700">
                                                                 Agregar imagenes
                                                             </h2>
-                                                            <!--end::Title-->
-                                                            <!--begin::Notice-->
-                                                            <div class="text-muted fw-semibold fs-6" >
-                                                                Lorem ipsum dolor sit amet.
-                                                            </div>
-                                                            <!--end::Notice-->
+                                                            
                                                         </div>
                                                         <!--end::Heading-->
                                                 
@@ -138,7 +110,7 @@
                                                                         Imagen
                                                                     </label>
                                                                     <input type="file" class="form-control form-control-solid" id="FileInput" (change)="uploadImage($event)">
-                                                                    <div class="text-muted fs-7">Lorem ipsum dolor sit amet.</div>
+                                                                    <div class="text-muted fs-7">Max: 2Mb</div>
                                                                 </div>
                                                             </div>
                                                             <div class="col">
@@ -147,7 +119,6 @@
                                                                         Título imagen
                                                                     </label>
                                                                     <input type="text" class="form-control form-control-solid" placeholder="Título imagen" name="imagen_titulo" [(ngModel)]="imagen_titulo">
-                                                                    <div class="text-muted fs-7">Lorem ipsum dolor sit amet.</div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 mb-5">
@@ -175,7 +146,7 @@
                                                                                     </div>
                                                                                 </td>
                                                                                 <td class="text-end">
-                                                                                    <a style="cursor: pointer;" class="btn btn-sm btn-icon btn-bg-danger w-30px h-30px" (click)="remove_imagen(idx)">
+                                                                                    <a style="cursor: pointer;" class="btn btn-sm btn-icon btn-bg-danger w-30px h-30px" data-bs-toggle="modal" [attr.data-bs-target]="'#deleteImg-'+item._id">
                                                                                         <!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
                                                                                         
                                                                                         <span class="svg-icon svg-icon-5 svg-icon-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,6 +156,55 @@
                                                                                         </span>
                                                                                         <!--end::Svg Icon-->
                                                                                     </a>
+
+                                                                                    <div id="deleteImg-{{item._id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                                        <div class="modal-dialog" role="document">
+                                                                                            <div class="modal-content">
+                                                                                                <div class="modal-header">
+                                                                                                    <h3 class="modal-title">
+                                                                                                        Eliminar imagen
+                                                                                                    </h3>
+                                                                                                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                                                                                                        <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/metronic/releases/2022-07-14-092914/core/html/src/media/icons/duotune/arrows/arr088.svg-->
+                                                                                                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <rect opacity="0.5" x="7.05025" y="15.5356" width="12" height="2" rx="1" transform="rotate(-45 7.05025 15.5356)" fill="currentColor"/>
+                                                                                                            <rect x="8.46447" y="7.05029" width="12" height="2" rx="1" transform="rotate(45 8.46447 7.05029)" fill="currentColor"/>
+                                                                                                            </svg>
+                                                                                                        </span>
+                                                                                                            <!--end::Svg Icon-->
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="modal-body">
+                                                                                                    <p class="mb-0">Confirmación para eiminación de la imagen.</p>
+                                                                                                </div>
+                                                                                                <div class="modal-footer">
+                                                                                                    <button type="button" class="btn btn-danger font-weight-bold" data-bs-dismiss="modal">
+                                                                                                        <span class="svg-icon svg-icon-3 ms-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <path opacity="0.3" d="M6 19.7C5.7 19.7 5.5 19.6 5.3 19.4C4.9 19 4.9 18.4 5.3 18L18 5.3C18.4 4.9 19 4.9 19.4 5.3C19.8 5.7 19.8 6.29999 19.4 6.69999L6.7 19.4C6.5 19.6 6.3 19.7 6 19.7Z" fill="currentColor"/>
+                                                                                                            <path d="M18.8 19.7C18.5 19.7 18.3 19.6 18.1 19.4L5.40001 6.69999C5.00001 6.29999 5.00001 5.7 5.40001 5.3C5.80001 4.9 6.40001 4.9 6.80001 5.3L19.5 18C19.9 18.4 19.9 19 19.5 19.4C19.3 19.6 19 19.7 18.8 19.7Z" fill="currentColor"/>
+                                                                                                            </svg>
+                                                                                                            </span>
+                                                                                                        Cerrar
+                                                                                                    </button>
+                                                                                                    <button *ngIf="!btn_delete_imagen" (click)="delete_imagen(item._id)" type="button" class="btn btn-dark font-weight-bold">
+                                                                                                        <span class="svg-icon svg-icon-3 ms-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <path opacity="0.3" d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor"/>
+                                                                                                            <path d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor"/>
+                                                                                                            </svg>
+                                                                                                        </span>
+                                                                                                        Confirmar
+                                                                                                    </button>
+                                                        
+                                                                                                    <button *ngIf="btn_delete_imagen" class="btn btn-dark" type="button" disabled>
+                                                                                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                                                                        Procesando...
+                                                                                                    </button>
+                                                        
+                                                                                                    
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div> 
                                                                                 </td>
                                                                             </tr>
                                                                             

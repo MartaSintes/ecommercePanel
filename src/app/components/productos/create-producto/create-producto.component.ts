@@ -84,7 +84,9 @@ export class CreateProductoComponent {
   crear() {
     if (!this.producto.titulo) {
       toastr.error('El titulo es requerido');
-    } else if (this.galeria.length == 0) {
+    }else if(!this.producto.descripcion){
+      toastr.error("La descripción es requerida");
+    }else if (this.galeria.length == 0) {
       toastr.error('Las galeria esta vacia');
     } else {
       const arr_galería = [];
