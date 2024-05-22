@@ -5,18 +5,7 @@
       <app-topbar></app-topbar>
       <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="toolbar" id="kt_toolbar">
-          <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
-            <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
-              data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
-              class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-              <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
-                Dashboard
-              </h1>
-            </div>
-            <div class="d-flex align-items-center py-1">
-              <a href="#" class="btn btn-sm btn-primary"> Crear</a>
-            </div>
-          </div>
+           <app-dashboard></app-dashboard>
         </div>
         <div class="post d-flex flex-column-fluid" id="kt_post">
           <div id="kt_content_container" class="container-xxl">
@@ -39,34 +28,7 @@
                     </div>
                   </div>
 
-                  <div class="card-body pt-4">
-                    <div class="d-flex justify-content-between" style="margin-bottom: 1rem !important">
-                    </div>
-                    <div class="collapse" id="kt_advanced_search_form">
-                      <div class="separator separator-dashed mb-6"></div>
-                      <div class="row g-8 mb-8">
-                        <div class="col-xxl-7">
-                          <label class="fs-7 form-label fw-bold text-gray-600">Producto</label>
-                          <input type="text" class="form-control form-control-solid form-control-sm"
-                            placeholder="HUNTER95" />
-                        </div>
-                        <div class="col-xxl-5">
-                          <div class="row g-8">
-                            <div class="col-lg-6">
-                              <label class="fs-7 form-label fw-bold text-gray-600">Estado</label>
-
-                              <select class="form-select form-select-solid form-select-sm">
-                                <option value="Todos">Todos</option>
-                                <option value="Publicado">Publicado</option>
-                                <option value="Borrador">Borrador</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="separator separator-dashed my-5"></div>
-
+                  <div class="card-body pt-4">                   
                     <div class="table-responsive">
                       <table class="table align-middle table-row-dashed fs-6 gy-5"
                         style="margin-bottom: 0px !important">
@@ -108,7 +70,7 @@
                               </div>
                             </td>
                             <td class="text-end min-w-150px">
-                               <a class="btn btn-icon btn-dark btn-sm me-3"(click)="deleteProducto(item.producto._id)">
+                               <a class="btn btn-icon btn-danger btn-sm me-3"(click)="deleteProducto(item.producto._id)">
                                     <span class="svg-icon svg-icon-3"
                                       ><svg
                                         width="24"

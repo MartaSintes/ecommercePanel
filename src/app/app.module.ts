@@ -18,6 +18,13 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
 import { CreateProductoComponent } from './components/productos/create-producto/create-producto.component';
 import { EditProductoComponent } from './components/productos/edit-producto/edit-producto.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
+import { IndexClientesComponent } from './components/clientes/index-clientes/index-clientes.component';
+import { AsideClientesComponent } from './components/clientes/aside-clientes/aside-clientes.component';
+import { PerfilClientesComponent } from './components/clientes/perfil-clientes/perfil-clientes.component';
+import { DireccionesClientesComponent } from './components/clientes/direcciones-clientes/direcciones-clientes.component';
+import { VentasClientesComponent } from './components/clientes/ventas-clientes/ventas-clientes.component';
+import { DetalleVentaClientesComponent } from './components/clientes/detalle-venta-clientes/detalle-venta-clientes.component';
 
 
 
@@ -34,6 +41,13 @@ import { EditProductoComponent } from './components/productos/edit-producto/edit
     IndexProductoComponent,
     CreateProductoComponent,
     EditProductoComponent,
+    ClientesComponent,
+    IndexClientesComponent,
+    AsideClientesComponent,
+    PerfilClientesComponent,
+    DireccionesClientesComponent,
+    VentasClientesComponent,
+    DetalleVentaClientesComponent,
   ],
   imports: [
     BrowserModule,
