@@ -18,10 +18,11 @@ export class LoginComponent {
     private _usuarioService: UsuarioService,
     private _router: Router,
 
+
   ){}
 
   ngOnInit(){
-
+   
   }
 
   login(){
@@ -34,6 +35,7 @@ export class LoginComponent {
         response =>{
           console.log(response);
           if(response.data != undefined){
+            localStorage.clear();
             localStorage.setItem('user',JSON.stringify(response.data));
             localStorage.setItem('token', response.jwt);
             this._router.navigate(['/dashboard']);
