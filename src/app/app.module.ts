@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,7 +18,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
 import { CreateProductoComponent } from './components/productos/create-producto/create-producto.component';
 import { EditProductoComponent } from './components/productos/edit-producto/edit-producto.component';
-import { ClientesComponent } from './components/clientes/clientes.component';
 import { IndexClientesComponent } from './components/clientes/index-clientes/index-clientes.component';
 import { AsideClientesComponent } from './components/clientes/aside-clientes/aside-clientes.component';
 import { PerfilClientesComponent } from './components/clientes/perfil-clientes/perfil-clientes.component';
@@ -41,7 +40,6 @@ import { DetalleVentaClientesComponent } from './components/clientes/detalle-ven
     IndexProductoComponent,
     CreateProductoComponent,
     EditProductoComponent,
-    ClientesComponent,
     IndexClientesComponent,
     AsideClientesComponent,
     PerfilClientesComponent,

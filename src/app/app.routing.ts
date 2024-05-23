@@ -10,19 +10,22 @@ import { LoginComponent } from "./components/login/login.component";
 import { IndexProductoComponent } from "./components/productos/index-producto/index-producto.component";
 import { CreateProductoComponent } from "./components/productos/create-producto/create-producto.component";
 import { EditProductoComponent } from "./components/productos/edit-producto/edit-producto.component";
+import { IndexClientesComponent } from "./components/clientes/index-clientes/index-clientes.component";
 
-const appRoutes : Routes = [
+const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
 
-  { path: 'colaborador', component: IndexUsuarioComponent},
+  { path: 'colaborador', component: IndexUsuarioComponent },
   { path: 'colaborador/create', component: CreateUsuarioComponent },
   { path: 'colaborador/edit/:id', component: EditUsuarioComponent },
 
-  { path: 'producto', component: IndexProductoComponent},
+  { path: 'producto', component: IndexProductoComponent },
   { path: 'producto/create', component: CreateProductoComponent },
-  { path: 'producto/edit/:id', component: EditProductoComponent }
-]
+  { path: 'producto/edit/:id', component: EditProductoComponent },
+
+  { path: 'clientes', component: IndexClientesComponent},
+];
 
 export const appRoutingProviders : any[] = [];
 export const routing : ModuleWithProviders<any> = RouterModule.forRoot(appRoutes);
