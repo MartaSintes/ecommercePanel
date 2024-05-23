@@ -1,10 +1,11 @@
 <div class="d-flex flex-column flex-root">
   <div class="page d-flex flex-row flex-column-fluid">
-    <app-sidebar></app-sidebar>
     <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
       <app-topbar></app-topbar>
+
       <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="toolbar" id="kt_toolbar">
+         <app-sidebar></app-sidebar>
           <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
             <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
               data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
