@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from "@angular/forms";
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,9 +23,7 @@ import { AsideClientesComponent } from './components/clientes/aside-clientes/asi
 import { PerfilClientesComponent } from './components/clientes/perfil-clientes/perfil-clientes.component';
 import { DireccionesClientesComponent } from './components/clientes/direcciones-clientes/direcciones-clientes.component';
 import { VentasClientesComponent } from './components/clientes/ventas-clientes/ventas-clientes.component';
-import { DetalleVentaClientesComponent } from './components/clientes/detalle-venta-clientes/detalle-venta-clientes.component';
-
-
+import { IndexOrdenComponent } from './components/clientes/ordenes/index-orden.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +43,7 @@ import { DetalleVentaClientesComponent } from './components/clientes/detalle-ven
     PerfilClientesComponent,
     DireccionesClientesComponent,
     VentasClientesComponent,
-    DetalleVentaClientesComponent,
+    IndexOrdenComponent,
   ],
   imports: [
     BrowserModule,

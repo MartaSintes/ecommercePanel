@@ -1,0 +1,111 @@
+<div class="d-flex flex-column flex-root">
+  <!--begin::Page-->
+  <div class="page d-flex flex-row flex-column-fluid">
+    <!--begin::Aside-->
+    <app-sidebar></app-sidebar>
+    <!--end::Aside-->
+    <!--begin::Wrapper-->
+    <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+      <!--begin::Header-->
+      <app-topbar></app-topbar>
+      <!--end::Header-->
+      <!--begin::Content-->
+      <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+        <!--begin::Toolbar-->
+        <div class="toolbar" id="kt_toolbar">
+          <!--begin::Container-->
+          <app-dashboard></app-dashboard>
+          <!--end::Container-->
+        </div>
+        <!--end::Toolbar-->
+        <!--begin::Post-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+          <!--begin::Container-->
+          <div id="kt_content_container" class="container-xxl">
+            <div class="row gy-5 g-xl-8">
+              <div class="col-12">
+                <div class="card mb-5 mb-xl-5">
+                  <!--begin::Card header-->
+                  <div class="card-header border-0 pt-5">
+                    <!--begin::Card title-->
+                    <h3 class="card-title align-items-start flex-column">
+                      <span class="card-label fs-3 mb-1 fw-700">Órdenes</span>
+                    </h3>
+                  </div>
+                  <!--begin::Card header-->
+                  <div class="card-body pt-0">
+                    <!--begin::Seprator-->
+                    <div class="separator separator-dashed my-4"></div>
+                    <!--end::Seprator-->
+
+                    <div class="separator separator-dashed my-4"></div>
+
+                    <div class="table-responsive">
+                      <!--begin::Table-->
+                      <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4"
+                        style="margin-bottom: 0px !important">
+                        <!--begin::Table head-->
+
+                        <!--end::Table head-->
+                        <!--begin::Table body-->
+                        <tbody>
+                          <ng-container *ngFor="
+                              let item of ordenes
+                                | slice
+                                  : (page - 1) * pageSize
+                                  : (page - 1) * pageSize + pageSize
+                            ">
+                            <tr>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                  <div class="d-flex justify-content-start flex-column">
+                                    <a class="text-hover-primary fw-semibold d-block fs-7">
+                                      {{ item._id}}
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                  <div class="d-flex justify-content-start flex-column">
+                                    <a class="text-hover-primary fw-semibold d-block fs-7">
+                                      {{ item.cliente.email }}
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                  <div class="d-flex justify-content-start flex-column">
+                                    <a class="text-hover-primary fw-semibold d-block fs-7">
+                                      {{ item.producto.titulo }}
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </ng-container>
+                        </tbody>
+                        <!--end::Table body-->
+                      </table>
+                      <!--end::Table-->
+                    </div>
+                  </div>
+                  <ngb-pagination [collectionSize]="ordenes.length" [(page)]="page" [pageSize]="pageSize" [maxSize]="5"
+                    [rotate]="true" [ellipses]="false" [boundaryLinks]="true" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::Post-->
+      </div>
+      <!--end::Content-->
+      <!--begin::Footer-->
+      <!--end::Footer-->
+    </div>
+    <!--end::Wrapper-->
+  </div>
+  <!--end::Page-->
+</div>

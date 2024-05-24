@@ -15,6 +15,7 @@ export class ClienteService {
     const headers = new HttpHeaders({'Content-Type': 'application/json', 
     Authorization: token,
     });
-    return this._http.get(this.url+'/gettCliente/' + filtro, {headers: headers});
+    return this._http.get(this.url+'/getCliente/' + filtro, {headers: headers});
   }
+  
 }
