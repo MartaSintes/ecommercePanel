@@ -14,7 +14,7 @@ export class IndexProductoComponent {
   public productos: Array<any> = [];
   public load_data = true;
   public page = 1;
-  public pageSize = 2;
+  public pageSize = 4;
   public url = GLOBAL.url;
   public btn_state_load = false;
 

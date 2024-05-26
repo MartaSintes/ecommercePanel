@@ -1,33 +1,21 @@
 <div class="d-flex flex-column flex-root">
-  <!--begin::Page-->
   <div class="page d-flex flex-row flex-column-fluid">
-    <!--begin::Aside-->
     <app-sidebar></app-sidebar>
-    <!--end::Aside-->
-    <!--begin::Wrapper-->
+
     <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-      <!--begin::Header-->
       <app-topbar></app-topbar>
-      <!--end::Header-->
-      <!--begin::Content-->
+
       <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <!--begin::Toolbar-->
         <div class="toolbar" id="kt_toolbar">
-          <!--begin::Container-->
-           <app-dashboard></app-dashboard>
-          <!--end::Container-->
+          <app-dashboard></app-dashboard>
         </div>
-        <!--end::Toolbar-->
-        <!--begin::Post-->
+
         <div class="post d-flex flex-column-fluid" id="kt_post">
-          <!--begin::Container-->
           <div id="kt_content_container" class="container-xxl">
             <div class="row gy-5 g-xl-8">
               <div class="col-12">
                 <div class="card mb-5 mb-xl-5">
-                  <!--begin::Card header-->
                   <div class="card-header border-0 pt-5">
-                    <!--begin::Card title-->
                     <h3 class="card-title align-items-start flex-column">
                       <span class="card-label fs-3 mb-1 fw-700"
                         >Colaboradores</span
@@ -42,24 +30,17 @@
                       </a>
                     </div>
                   </div>
-                  <!--begin::Card header-->
+
                   <div class="card-body pt-0">
-                    <!--begin::Seprator-->
                     <div class="separator separator-dashed my-4"></div>
-                    <!--end::Seprator-->
 
                     <div class="separator separator-dashed my-4"></div>
 
                     <div class="table-responsive">
-                      <!--begin::Table-->
                       <table
                         class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4"
                         style="margin-bottom: 0px !important"
                       >
-                        <!--begin::Table head-->
-
-                        <!--end::Table head-->
-                        <!--begin::Table body-->
                         <tbody>
                           <ng-container
                             *ngFor="
@@ -111,7 +92,6 @@
                                       {{ item.email }}
                                     </a>
                                   </div>
-                                  <!--end::Name-->
                                 </div>
                               </td>
                               <td class="text-end">
@@ -158,7 +138,6 @@
                                     ]"
                                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
                                   >
-                                    <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                     <span class="svg-icon svg-icon-3">
                                       <svg
                                         width="24"
@@ -178,7 +157,6 @@
                                         ></path>
                                       </svg>
                                     </span>
-                                    <!--end::Svg Icon-->
                                   </a>
                                 </div>
 
@@ -200,7 +178,6 @@
                                           data-bs-dismiss="modal"
                                           aria-label="Close"
                                         >
-                                          <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/metronic/releases/2022-07-14-092914/core/html/src/media/icons/duotune/arrows/arr088.svg-->
                                           <span
                                             class="svg-icon svg-icon-muted svg-icon-2hx"
                                             ><svg
@@ -231,7 +208,6 @@
                                               />
                                             </svg>
                                           </span>
-                                          <!--end::Svg Icon-->
                                         </div>
                                       </div>
                                       <div class="modal-body">
@@ -313,9 +289,7 @@
                             </tr>
                           </ng-container>
                         </tbody>
-                        <!--end::Table body-->
                       </table>
-                      <!--end::Table-->
                     </div>
                   </div>
                   <ngb-pagination
@@ -331,15 +305,8 @@
               </div>
             </div>
           </div>
-          <!--end::Container-->
         </div>
-        <!--end::Post-->
       </div>
-      <!--end::Content-->
-      <!--begin::Footer-->
-      <!--end::Footer-->
     </div>
-    <!--end::Wrapper-->
   </div>
-  <!--end::Page-->
 </div>
