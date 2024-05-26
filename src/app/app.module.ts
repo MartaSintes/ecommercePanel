@@ -19,10 +19,7 @@ import { IndexProductoComponent } from './components/productos/index-producto/in
 import { CreateProductoComponent } from './components/productos/create-producto/create-producto.component';
 import { EditProductoComponent } from './components/productos/edit-producto/edit-producto.component';
 import { IndexClientesComponent } from './components/clientes/index-clientes/index-clientes.component';
-import { AsideClientesComponent } from './components/clientes/aside-clientes/aside-clientes.component';
-import { PerfilClientesComponent } from './components/clientes/perfil-clientes/perfil-clientes.component';
-import { DireccionesClientesComponent } from './components/clientes/direcciones-clientes/direcciones-clientes.component';
-import { VentasClientesComponent } from './components/clientes/ventas-clientes/ventas-clientes.component';
+
 import { IndexOrdenComponent } from './components/clientes/ordenes/index-orden.component';
 
 @NgModule({
@@ -39,10 +36,6 @@ import { IndexOrdenComponent } from './components/clientes/ordenes/index-orden.c
     CreateProductoComponent,
     EditProductoComponent,
     IndexClientesComponent,
-    AsideClientesComponent,
-    PerfilClientesComponent,
-    DireccionesClientesComponent,
-    VentasClientesComponent,
     IndexOrdenComponent,
   ],
   imports: [
