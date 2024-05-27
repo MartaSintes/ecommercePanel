@@ -25,11 +25,9 @@ export class IndexClientesComponent {
   ngOnInit() {
     this._route.queryParams.subscribe((params) => {
       this.filtro = params['filter'];
-      if (this.filtro) {
+     
         this.init_data();
-      } else {
-        this.clientes = [];
-      }
+      
     });
   }
 
