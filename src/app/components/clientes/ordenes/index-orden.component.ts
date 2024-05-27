@@ -9,7 +9,7 @@ declare var toastr: any;
 })
 export class IndexOrdenComponent implements OnInit {
   public ordenes: any[] = [];
-  public token: string | null = localStorage.getItem('token');
+  public token = typeof window !== 'undefined' ? localStorage.getItem('token') : '';
   public page = 1;
   public pageSize = 10;
 
