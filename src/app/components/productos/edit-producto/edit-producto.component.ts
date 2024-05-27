@@ -13,7 +13,8 @@ declare var $: any;
 export class EditProductoComponent {
   public active = 1;
   public producto: any = {};
-  public token = localStorage.getItem('token');
+  public token =
+    typeof window !== 'undefined' ? localStorage.getItem('token') : '';
   public galeria: Array<any> = [];
   public imagen: any = undefined;
   public imagen_titulo = '';

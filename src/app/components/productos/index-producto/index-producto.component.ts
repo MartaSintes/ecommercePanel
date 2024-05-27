@@ -10,7 +10,8 @@ declare var toastr: any;
   styleUrl: './index-producto.component.css',
 })
 export class IndexProductoComponent {
-  public token = localStorage.getItem('token');
+  public token =
+    typeof window !== 'undefined' ? localStorage.getItem('token') : '';
   public productos: Array<any> = [];
   public load_data = true;
   public page = 1;
