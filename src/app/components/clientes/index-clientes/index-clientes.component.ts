@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./index-clientes.component.css'],
 })
 export class IndexClientesComponent {
-  public token = localStorage.getItem('token');
+  public token = typeof window !== 'undefined' ? localStorage.getItem('token') : '';
   public filtro = '';
   public load_data = false;
   public clientes: Array<any> = [];

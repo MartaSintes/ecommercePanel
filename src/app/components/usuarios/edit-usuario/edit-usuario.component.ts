@@ -12,7 +12,8 @@ export class EditUsuarioComponent {
   public usuario: any = {};
   public btn_load = false;
   public id = '';
-  public token: string | null = localStorage.getItem('token');
+  public token =
+    typeof window !== 'undefined' ? localStorage.getItem('token') : '';
 
   constructor(
     private _route: ActivatedRoute,
@@ -54,6 +55,4 @@ export class EditUsuarioComponent {
         }
       );
   }
-
- 
 }

@@ -10,10 +10,10 @@ declare var toastr: any;
 })
 export class IndexUsuarioComponent implements OnInit {
   public usuarios: any[] = [];
-  public token: string | null = localStorage.getItem('token');
+  public token =
+    typeof window !== 'undefined' ? localStorage.getItem('token') : '';
   public page = 1;
   public pageSize = 2;
-
 
   constructor(private _usuarioService: UsuarioService) {}
 
@@ -36,17 +36,14 @@ export class IndexUsuarioComponent implements OnInit {
   }
 
   borrarUsuario(id: string): void {
-    
-     this._usuarioService.deleteUsuario(id, this.token).subscribe(
-       (response) => {
-         toastr.success('Usuario eliminado correctamente');
-         this.initData(); // Actualizar la lista de usuarios
-         
-       },
-       (error) => {
-         toastr.error('Error al eliminar el usuario');
-        
-       }
-     );
+    this._usuarioService.deleteUsuario(id, this.token).subscribe(
+      (response) => {
+        toastr.success('Usuario eliminado correctamente');
+        this.initData(); // Actualizar la lista de usuarios
+      },
+      (error) => {
+        toastr.error('Error al eliminar el usuario');
+      }
+    );
   }
 }

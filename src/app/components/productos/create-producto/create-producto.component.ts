@@ -16,7 +16,7 @@ export class CreateProductoComponent {
   public imagen_titulo = '';
   public galeria: Array<any> = [];
   public imagen_str: any = '';
-  public token: string | null = localStorage.getItem('token');
+  public token = typeof window !== 'undefined' ? localStorage.getItem('token') : '';
   public btn_load = false;
 
   constructor(
